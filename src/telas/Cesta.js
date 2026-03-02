@@ -4,6 +4,8 @@ import { Text,Image, Dimensions,StyleSheet,View } from "react-native";
 
 import topo from '../../assets/topo.png';
 import logo from '../../assets/logo.png';
+import { Montserrat_400Regular, Montserrat_700Bold } from "@expo-google-fonts/montserrat";
+import { Arimo_400Regular } from "@expo-google-fonts/arimo";
 
 
 const width = Dimensions.get('screen').width;
@@ -58,6 +60,7 @@ nome:{
    lineHeight: 42,
    color: "#464646",
    fontWeight: "bold",
+   fontFamily: Montserrat_400Regular,
 
 
 },
@@ -75,11 +78,12 @@ imagemFazenda:{
 nomeFazenda:{
    fontSize: 16,
    lineHeight: 26,
+   fontFamily: Montserrat_700Bold,
 },
 descricao:{
    color: "#A3A3A3",
    fontSize: 16,
-   lineHeight: 26,
+   lineHeig
 },
 preco:{
    color: "#2A9F85",
@@ -88,7 +92,6 @@ preco:{
    lineHeight: 42,
    marginTop: 8,
 },
-
 
 
 
