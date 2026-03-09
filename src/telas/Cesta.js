@@ -1,103 +1,87 @@
 import React from "react";
-import { Text,Image, Dimensions,StyleSheet,View } from "react-native";
-
+import { Text, Image, Dimensions, StyleSheet, View, ScrollView } from "react-native";
 
 import topo from '../../assets/topo.png';
 import logo from '../../assets/logo.png';
-import { Montserrat_400Regular, Montserrat_700Bold } from "@expo-google-fonts/montserrat";
-import { Arimo_400Regular } from "@expo-google-fonts/arimo";
 
+const width= Dimensions.get('screen').width;
 
-const width = Dimensions.get('screen').width;
+export default function Cesta() {
+return (
+<ScrollView>
+<Image source={topo} style={estilos.topo} />
+<Text style={estilos.titulo}>Detalhes da cesta</Text>
 
+<View style={estilos.cesta}>
+<Text style={estilos.nome}>Cesta de verduras</Text>
 
-export default function Cesta(){
-  return<>
-  <Image source={topo} style={estilos.topo} />
-   <Text style={estilos.titulo}>Detalhes da cesta</Text>
-   <Text style={estilos.nome}>Cesta de verduras</Text>
+<View style={estilos.fazenda}>
+<Image source={logo} style={estilos.imagenFazenda} />
+<Text style={estilos.nomeFazenda}>Jenny Jack Farm</Text>
+</View>
 
-
-   <View style={estilos.fazenda}>
-    
-   <Image source={logo} style={estilos.imagemFazenda} />
-   <Text style={estilos.nomeFazenda}>Jenny Jack Farm</Text>
-
-   </View>
-
-
-   <Text style={estilos.descricao}>Uma cesta com produtos selecionados cuidadosamente da fazenda direto para sua cozinha.</Text>
-   <Text style={estilos.preco}>R$ 40,00</Text>
-
-
-
-
-  </>
+<Text style={estilos.descricao}>
+Uma cesta com produtos selecionados cuidadosamente da fazenda direto para sua cozinha.
+</Text>
+<Text style={estilos.preco}>R$ 40,00</Text>
+</View>
+</ScrollView>
+);
 }
 
-
 const estilos = StyleSheet.create({
-topo:{
-   width:"100%",
-   height: 578 / 768 * width
+topo: {
+width: "100%",
+//height: (578 / 768) * width,
 },
-titulo:{
-   width: "100%",
-   position: "absolute",
-   textAlign: "center",
-   fontSize: 16,
-   lineHeight: 26,
-   color: "white",
-   fontWeight: "bold",
-   padding: 16,
+titulo: {
+width: "100%",
+position: "absolute",
+textAlign: "center",
+fontSize: 16,
+lineHeight: 26,
+color: "white",
+fontWeight: "bold",
+padding: 16,
+fontFamily: "Inter-Bold",
 },
-Cesta:{
-   paddingVertical: 8,
-   paddingHorizontal: 16,
+cesta: {
+paddingVertical: 8,
+paddingHorizontal: 16,
 },
-nome:{
-   fontSize: 26,
-   lineHeight: 42,
-   color: "#464646",
-   fontWeight: "bold",
-   fontFamily: Montserrat_400Regular,
-
-
+nome: {
+color: "#464646",
+fontSize: 26,
+lineHeight: 42,
+fontFamily: "MontserratBold",
 },
-fazenda:{
-   flexDirection: "row",
-   paddingVertical: 12,
+fazenda: {
+flexDirection: "row",
+alignItems: "center",
+paddingVertical: 12,
 },
-imagemFazenda:{
-    width: 32,
-    height: 32,
-
+imagenFazenda: {
+width: 32,
+height: 32,
+marginRight: 12,
 },
-
-
-nomeFazenda:{
-   fontSize: 16,
-   lineHeight: 26,
-   fontFamily: Montserrat_700Bold,
+nomeFazenda: {
+fontSize: 16,
+lineHeight: 26,
+fontFamily: "MontserratRegular",
+color: "#464646",
 },
-descricao:{
-   color: "#A3A3A3",
-   fontSize: 16,
-   lineHeig
+descricao: {
+color: "#A3A3A3",
+fontSize: 16,
+lineHeight: 26,
+fontFamily: "Inter-Regular",
 },
-preco:{
-   color: "#2A9F85",
-   fontWeight: "bold",
-   fontSize: 26,
-   lineHeight: 42,
-   marginTop: 8,
+preco: {
+color: "#2A9F85",
+fontWeight: "bold",
+fontSize: 26,
+lineHeight: 42,
+marginTop: 8,
 },
-
-
-
-
-
-})
-
-
-
+});
